@@ -1,0 +1,57 @@
+---
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties.hibernate.default_schema: USERS
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+# H2 Properties for local development / testing -Dspring.profiles.active=H2
+spring:
+  profiles: H2
+  datasource:
+    url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties.hibernate.default_schema: USERS
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+spring:
+  profiles: ITG
+  datasource:
+    url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties.hibernate.default_schema: USERS
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+spring:
+  profiles: CAT
+  datasource:
+    url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties.hibernate.default_schema: USERS
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---

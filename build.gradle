@@ -80,18 +80,18 @@ task bootRunH2(type: org.springframework.boot.gradle.run.BootRunTask) {
     }
 }
 
-task bootRunITG(type: org.springframework.boot.gradle.run.BootRunTask) {
+task bootRunDev(type: org.springframework.boot.gradle.run.BootRunTask) {
     doFirst() {
         main = project.mainClassName
         classpath = sourceSets.main.runtimeClasspath
-        systemProperty "spring.profiles.active", "ITG"
+        systemProperty "spring.profiles.active", "Dev"
     }
 }
 
-task bootRunCAT(type: org.springframework.boot.gradle.run.BootRunTask) {
+task bootRunTest(type: org.springframework.boot.gradle.run.BootRunTask) {
     doFirst() {
         main = project.mainClassName
         classpath = sourceSets.main.runtimeClasspath
-        systemProperty "spring.profiles.active", "CAT"
+        systemProperty "spring.profiles.active", "Test"
     }
 }

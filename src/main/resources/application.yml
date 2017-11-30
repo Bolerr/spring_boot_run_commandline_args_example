@@ -28,7 +28,7 @@ spring:
 
 ---
 spring:
-  profiles: ITG
+  profiles: Dev
   datasource:
     url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
     username: sa
@@ -42,7 +42,7 @@ spring:
 
 ---
 spring:
-  profiles: CAT
+  profiles: Test
   datasource:
     url: jdbc:h2:mem:test;INIT=CREATE SCHEMA IF NOT EXISTS USERS;DB_CLOSE_DELAY=-1;
     username: sa

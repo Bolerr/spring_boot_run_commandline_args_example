@@ -5,6 +5,9 @@ excel file, and match them up to ids in an user authority DB2 table. The utility
 with the same permissions as matching mainframe records. This was to support a number of programs that were being
 converted from mainframe programs to web applications.
 
+The multiple spring profiles are not needed but left over to give the user an idea of how they could use them with custom
+bootRun tasks for targeting different environments.
+
 
 To run the project build the jar and then run:
 
@@ -25,10 +28,10 @@ When running these tasks you have to pass the arguments slightly differently.
 
 `gradlew bootRunH2 -Pargs="<workbook file path> <worksheetName>"`
 
-To run against ITG you can use the following command after you put credentials in application.yml
+To run against Dev you can use the following command after you put credentials in application.yml
 
-`gradlew bootRunITG -Pargs="<workbook file path> <worksheetName>"`
+`gradlew bootRunDev -Pargs="<workbook file path> <worksheetName>"`
 
-To run against CAT you can use the following command after you put credentials in application.yml
+To run against Test you can use the following command after you put credentials in application.yml
 
-`gradlew bootRunCAT -Pargs="<workbook file path> <worksheetName>"`
+`gradlew bootRunTest -Pargs="<workbook file path> <worksheetName>"`
